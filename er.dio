@@ -1,4 +1,4 @@
-<mxfile host="65bd71144e" modified="2021-01-19T12:20:07.221Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.47.3 Chrome/78.0.3904.130 Electron/7.3.2 Safari/537.36" version="13.10.0" etag="FAMijsVbmpX7S6ogCeGr" type="embed" pages="3">
+<mxfile host="65bd71144e" modified="2021-01-19T12:31:07.683Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.47.3 Chrome/78.0.3904.130 Electron/7.3.2 Safari/537.36" version="13.10.0" etag="EHM1XFVbV_Z14ht0D5C9" type="embed" pages="3">
     <diagram id="wAoyzJi7SPJmGwAVHJc8" name="Page_relation (for User)">
         <mxGraphModel dx="1256" dy="720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
@@ -119,7 +119,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="yQhcVNKe8j5Z_3Np4epz" name="Page_relation (for  Doctor)">
-        <mxGraphModel dx="1256" dy="720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1467" dy="720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="SM14ZPv3RND-MxX5oc8A-0"/>
                 <mxCell id="SM14ZPv3RND-MxX5oc8A-1" parent="SM14ZPv3RND-MxX5oc8A-0"/>
@@ -269,12 +269,39 @@
         </mxGraphModel>
     </diagram>
     <diagram id="wyJTr78oOTNp5ZH_JxDI" name="tables">
-        <mxGraphModel dx="501" dy="720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1467" dy="720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="_7CTV-4Sv0ZYfPJvIMsA-0"/>
                 <mxCell id="_7CTV-4Sv0ZYfPJvIMsA-1" parent="_7CTV-4Sv0ZYfPJvIMsA-0"/>
-                <mxCell id="_v4xmzxxPZzmTcDHhk0H-0" value="Users テーブル&lt;br&gt;・ニックネーム&lt;br&gt;・Eメール&lt;br&gt;・パスワード&lt;br&gt;・氏名（漢字＋かな）&lt;br&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="_7CTV-4Sv0ZYfPJvIMsA-1">
-                    <mxGeometry x="100" y="170" width="290" height="190" as="geometry"/>
+                <mxCell id="_v4xmzxxPZzmTcDHhk0H-0" value="＜Users テーブル＞&lt;br&gt;&lt;br&gt;・ニックネーム&lt;br&gt;・Eメール&lt;br&gt;・パスワード&lt;br&gt;・氏名（漢字＋かな）&lt;br&gt;・住所&lt;br&gt;・電話番号" style="whiteSpace=wrap;html=1;" vertex="1" parent="_7CTV-4Sv0ZYfPJvIMsA-1">
+                    <mxGeometry x="80" y="40" width="200" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="_v4xmzxxPZzmTcDHhk0H-1" value="＜Injuries テーブル＞&lt;br&gt;&lt;br&gt;・怪我の部位&lt;br&gt;・いつ怪我したか&lt;br&gt;・怪我の原因&lt;br&gt;・痛みの種類&lt;br&gt;・痛みの出る動き&lt;br&gt;・痛みの程度&lt;br&gt;・備考&lt;br&gt;&lt;br&gt;・user_id" style="whiteSpace=wrap;html=1;" vertex="1" parent="_7CTV-4Sv0ZYfPJvIMsA-1">
+                    <mxGeometry x="480" y="40" width="200" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="_v4xmzxxPZzmTcDHhk0H-2" value="＜Doctors テーブル＞&lt;br&gt;&lt;br&gt;・氏名（漢字＋かな）&lt;br&gt;・Eメール&lt;br&gt;・パスワード&lt;br&gt;・所属病院名&lt;br&gt;・病院の住所&lt;br&gt;・病院の電話番号" style="whiteSpace=wrap;html=1;" vertex="1" parent="_7CTV-4Sv0ZYfPJvIMsA-1">
+                    <mxGeometry x="80" y="360" width="200" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="_v4xmzxxPZzmTcDHhk0H-3" value="＜Evaluation テーブル＞&lt;br&gt;&lt;br&gt;・診断名&lt;br&gt;・処置の内容&lt;br&gt;・リハビリ&lt;br&gt;・備考&lt;br&gt;&lt;br&gt;・doctor_id&lt;br&gt;・injury_id" style="whiteSpace=wrap;html=1;" vertex="1" parent="_7CTV-4Sv0ZYfPJvIMsA-1">
+                    <mxGeometry x="480" y="360" width="200" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="_v4xmzxxPZzmTcDHhk0H-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;backgroundOutline=0;endArrow=ERmany;endFill=1;bendable=0;" edge="1" parent="_7CTV-4Sv0ZYfPJvIMsA-1" source="_v4xmzxxPZzmTcDHhk0H-0">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="470" y="120" as="targetPoint"/>
+                        <mxPoint x="500.5" y="90" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="_v4xmzxxPZzmTcDHhk0H-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;backgroundOutline=0;endArrow=ERmany;endFill=1;bendable=0;" edge="1" parent="_7CTV-4Sv0ZYfPJvIMsA-1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="470" y="439.5" as="targetPoint"/>
+                        <mxPoint x="300" y="439.5" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="_v4xmzxxPZzmTcDHhk0H-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;backgroundOutline=0;endArrow=ERmany;endFill=1;bendable=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="_7CTV-4Sv0ZYfPJvIMsA-1" source="_v4xmzxxPZzmTcDHhk0H-1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="579.5" y="350" as="targetPoint"/>
+                        <mxPoint x="580" y="210" as="sourcePoint"/>
+                    </mxGeometry>
                 </mxCell>
             </root>
         </mxGraphModel>
