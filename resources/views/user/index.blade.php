@@ -1,0 +1,10 @@
+<html>
+<head>
+  <title>USER/INDEX</title>
+</head>
+<body>
+  <h1>INDEX</h1>
+  <p>{{$user->name}}</p> 
+  <p>{{$user->email}}</p>
+</body>
+</html>
