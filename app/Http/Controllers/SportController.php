@@ -11,4 +11,8 @@ class SportController extends Controller
         
         return view('sport.index');
     }
+
+    public function create(){
+        return view('sport.create');
+    }
 }
