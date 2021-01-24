@@ -21,7 +21,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/user', 'App\Http\Controllers\UserController@index');
+Route::resource('/user', 'App\Http\Controllers\UserController');
 
 Route::resource('/sport', 'App\Http\Controllers\SportController');
 
