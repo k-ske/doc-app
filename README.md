@@ -17,7 +17,27 @@
 
 ### Association
 
+- has_one :spor
 - has_many :injuries
+
+
+## sports テーブル
+
+| Column            | Type       | Options                        |
+| ----------------- | ---------- | ------------------------------ |
+| es_sport          | string     |                                |
+| es_comment        | string     |                                |
+| jhs_sport         | string     |                                |
+| jhs_comment       | string     |                                |
+| hs_sport          | string     |                                |
+| hs_comment        | string     |                                |
+| co_sport          | string     |                                |
+| co_comment        | string     |                                |
+| user_id           | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
 
 ## injuries テーブル
 

@@ -21,4 +21,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/user', 'App\Http\Controllers\UserController@index');
+
+Route::resource('/sport', 'App\Http\Controllers\SportController');
+
 require __DIR__.'/auth.php';
