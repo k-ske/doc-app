@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 use App\Models\Sport;
 
 class SportController extends Controller
 {
     public function index(){
-
-        
-        return view('sport.index');
+        $sports = Sport::all();
+        return view('sport.index', ["sports" => $sports]);
     }
 
     public function create(){
