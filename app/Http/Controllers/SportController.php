@@ -31,4 +31,9 @@ class SportController extends Controller
         $sport->save();
         return redirect() -> route('sport.index');
     }
+
+    public function edit($id){
+        $sport = Sport::find($id);
+        return view('sport.edit', compact('sport'));
+    }
 }
