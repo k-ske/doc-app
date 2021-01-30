@@ -25,4 +25,6 @@ Route::resource('/user', 'App\Http\Controllers\UserController');
 
 Route::resource('/sport', 'App\Http\Controllers\SportController');
 
+Route::resource('/injury', 'App\Http\Controllers\InjuryController');
+
 require __DIR__.'/auth.php';
