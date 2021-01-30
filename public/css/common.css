@@ -1,0 +1,18 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+}
+.contents {
+  flex: 1;
+  background: lightgreen;
+}
+.footer {
+}
