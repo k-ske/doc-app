@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/parts/header.css">
+<link rel="stylesheet" href="/css/parts/header.css">
 
 <div class="allHeader">
   <div class="headArea">

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/parts/mainbar.css">
+<link rel="stylesheet" href="/css/parts/mainbar.css">
 
 <div class="myPage">
   <div class="myTitle">マイページ</div>

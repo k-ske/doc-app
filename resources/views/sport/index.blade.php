@@ -2,7 +2,7 @@
 @section('title', 'ユーザートップページ')
 
 @section('content')
-  <link rel="stylesheet" href="css/sport/index.css">
+  <link rel="stylesheet" href="/css/sport/index.css">
 
   <div class="main-wrap">
     <div class="main-page">
@@ -26,10 +26,17 @@
               <p class="tag">大学生：{{ $sport->co_sport }}</p>
               <p class="detail">詳細：{{ $sport->co_comment }}</p>
             </div>
+            
+            <div class="btn">
+              <a class="btn-create" href="{{ action('App\Http\Controllers\SportController@create') }}">登録ページへ</a>
+            </div>
+            <div class="btn">
+              <a class="btn-edit" href="{{ route('sport.edit', $sport->id)}}">編集する</a>
+            </div>   
           @endforeach
-
-    </div>
-</div>
+      </div>
+    </div> 
+  </div>
 
   
 @endsection
