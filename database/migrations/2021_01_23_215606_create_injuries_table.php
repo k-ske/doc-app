@@ -18,7 +18,7 @@ class CreateInjuriesTable extends Migration
             $table->string('injury_site');
             $table->string('when_injured');
             $table->string('moi');
-            $table->integer('pain_type_id');
+            $table->string('pain_type');
             $table->string('painful_motion');
             $table->string('how_painful');
             $table->string('comments');
