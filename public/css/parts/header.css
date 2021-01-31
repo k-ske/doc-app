@@ -70,7 +70,8 @@
 .home, .articleSearch, .hospitalSearch, .subhead-myPage, .subhead-logIn, .rightMenu{
   display: inline-block;
   position: relative;
-  padding: 0 30px;
+  padding: 0 auto;
+  margin: 0 10px;
   height: 50px;
   line-height: 30px;
   font-size: 25px;
