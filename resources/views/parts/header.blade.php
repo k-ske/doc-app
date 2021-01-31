@@ -34,7 +34,7 @@
         </li>
       @auth
         <li class="subhead-myPage">
-          <a href="/">マイページ</a>
+          <a href="{{ action('App\Http\Controllers\SportController@index') }}">マイページ</a>
         </li>
       @else
         <li class="subhead-logIn">

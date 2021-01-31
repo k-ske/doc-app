@@ -2,6 +2,8 @@
 @section('title', 'ユーザートップページ')
 
 @section('content')
+  <link rel="stylesheet" href="css/sport/index.css">
+
   @foreach ($sports as $sport)
     <p>小学生：{{ $sport->es_sport }}</p>
     <p>詳細：{{ $sport->es_comment }}</p>
