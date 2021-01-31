@@ -9,6 +9,6 @@ class InjuryController extends Controller
     public function index(){
         $injuries = Injury::all();
 
-        return view('injury.index')
+        return view('injury.index');
     }
 }

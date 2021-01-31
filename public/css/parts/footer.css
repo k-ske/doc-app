@@ -1,0 +1,14 @@
+.allFooter{
+  background-color: black;
+}
+
+.footer{
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+p{
+  font-size: 9px;
+  color: white;
+}

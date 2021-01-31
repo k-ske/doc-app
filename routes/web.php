@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('top');
 });
 
 Route::get('/dashboard', function () {
@@ -24,5 +24,7 @@ Route::get('/dashboard', function () {
 Route::resource('/user', 'App\Http\Controllers\UserController');
 
 Route::resource('/sport', 'App\Http\Controllers\SportController');
+
+Route::resource('/injury', 'App\Http\Controllers\InjuryController');
 
 require __DIR__.'/auth.php';
