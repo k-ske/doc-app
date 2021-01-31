@@ -4,7 +4,7 @@
 }
 .headList{
   display: flex;
-  width: 90%;
+  width: 80%;
   margin: auto;
 }
 
@@ -13,7 +13,7 @@
   display: table-cell;
   vertical-align: middle;
   text-align: left;
-  font-size: 15px;
+  font-size: 35px;
 }
 
 .title{
@@ -35,33 +35,48 @@
   display: inline-block;
   vertical-align: middle;
   text-align: right;
-  font-size: 13px;
+  font-size: 30px;
 }
 
 
 /*サブヘッダー*/
-
-.topMenu{
+.subheadArea{
+  background-color: #45baec;
+}
+.menuList{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+}
+.topMenu-left{
+  display: flex;
+  justify-content: flex-start;
   list-style: none;
-  background-color: #45baec; 
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.topMenu-right{
+  justify-content: flex-end;
+  list-style: none;
+  margin-bottom: 0;
 }
 
 .topMenu a:hover{
   color: white;
 }
 
-.home, .articleSearch, .hospitalSearch, .subhead-myPage, .subhead-logIn{
-  display: block;
+.home, .articleSearch, .hospitalSearch, .subhead-myPage, .subhead-logIn, .rightMenu{
+  display: inline-block;
   position: relative;
-  padding: 0 20px;
-  height: 30px;
+  padding: 0 auto;
+  margin: 0 10px;
+  height: 50px;
   line-height: 30px;
-  font-size: 12px;
+  font-size: 25px;
   font-weight: bold;
   white-space: nowrap;
   text-align: center;
   letter-spacing: 0.05em;
 }
-  

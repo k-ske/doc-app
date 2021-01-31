@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/parts/header.css">
+<link rel="stylesheet" href="/css/parts/header.css">
 
 <div class="allHeader">
   <div class="headArea">
@@ -22,7 +22,7 @@
 
   <div class="subheadArea">
     <div class="menuList">
-      <ul class="topMenu">
+      <ul class="topMenu-left">
         <li class="home">
           <a href="/">ホーム</a>
         </li>
@@ -32,15 +32,20 @@
         <li class="hospitalSearch">
           <a href="/">病院を検索する</a>
         </li>
-      @auth
+        @auth
         <li class="subhead-myPage">
-          <a href="/">マイページ</a>
+          <a href="{{ action('App\Http\Controllers\SportController@index') }}">マイページ</a>
         </li>
-      @else
+        @else
         <li class="subhead-logIn">
           <a href="{{ route('login') }}">ログイン</a>
         </li>
-      @endauth
+        @endauth
+      </ul>
+      <ul class="topMenu-right">
+        <li class="rightMenu">
+          <a href="/">MORE</a>
+        </li>
       </ul>
     </div>
   </div>

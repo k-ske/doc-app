@@ -1,15 +1,42 @@
-@extends('layouts.common')
+@extends('layouts.mypage')
 @section('title', 'ユーザートップページ')
 
 @section('content')
-  @foreach ($sports as $sport)
-    <p>小学生：{{ $sport->es_sport }}</p>
-    <p>詳細：{{ $sport->es_comment }}</p>
-    <p>中学生：{{ $sport->jhs_sport }}</p>
-    <p>詳細：{{ $sport->jhs_comment }}</p>
-    <p>高校生：{{ $sport->hs_sport }}</p>
-    <p>詳細：{{ $sport->hs_comment }}</p>
-    <p>大学生：{{ $sport->co_sport }}</p>
-    <p>詳細：{{ $sport->co_comment }}</p>
-  @endforeach
+  <link rel="stylesheet" href="/css/sport/index.css">
+
+  <div class="main-wrap">
+    <div class="main-page">
+      <div class="sport-file">
+        <h3 class="profile">スポーツ活動歴</h3>
+        <div class="sport-show">
+          @foreach ($sports as $sport)
+            <div class="es">
+              <p class="tag">小学生：{{ $sport->es_sport }}</p>
+              <p class="detail">詳細：{{ $sport->es_comment }}</p>
+            </div>
+            <div class="jhs">
+              <p class="tag">中学生：{{ $sport->jhs_sport }}</p>
+              <p class="detail">詳細：{{ $sport->jhs_comment }}</p>
+            </div>
+            <div class="hs">
+              <p class="tag">高校生：{{ $sport->hs_sport }}</p>
+              <p class="detail">詳細：{{ $sport->hs_comment }}</p>
+            </div>  
+            <div class="co">
+              <p class="tag">大学生：{{ $sport->co_sport }}</p>
+              <p class="detail">詳細：{{ $sport->co_comment }}</p>
+            </div>
+            
+            <div class="btn">
+              <a class="btn-create" href="{{ action('App\Http\Controllers\SportController@create') }}">登録ページへ</a>
+            </div>
+            <div class="btn">
+              <a class="btn-edit" href="{{ route('sport.edit', $sport->id)}}">編集する</a>
+            </div>   
+          @endforeach
+      </div>
+    </div> 
+  </div>
+
+  
 @endsection
