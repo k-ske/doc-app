@@ -44,4 +44,8 @@ class User extends Authenticatable
     public function sport(){
         return $this->hasOne('App\Models\Sport');
     }
+
+    public function injury(){
+        return $this->hasMany('App\Models\Injury');
+    }
 }
