@@ -31,7 +31,7 @@
   text-align: right;
 }
 
-.logIn, .signUp{
+.logOut, .logIn, .signUp{
   display: inline-block;
   vertical-align: middle;
   text-align: right;
@@ -51,11 +51,8 @@
 .topMenu a:hover{
   color: white;
 }
-a:active{
-  color : auto;
-}
 
-.home, .articleSearch, .hospitalSearch, .subhead-logIn{
+.home, .articleSearch, .hospitalSearch, .subhead-myPage, .subhead-logIn{
   display: block;
   position: relative;
   padding: 0 20px;
