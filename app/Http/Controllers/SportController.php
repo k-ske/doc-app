@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 use App\Models\User;
 use App\Models\Sport;
 
 class SportController extends Controller
 {
     public function index(){
-        $sports = Sport::all();
+        $user_id = Auth::id();
+        $sports = Sport::where('user_id', $user_id)->get();
         return view('sport.index', ["sports" => $sports]);
     }
 

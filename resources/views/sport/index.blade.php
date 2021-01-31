@@ -11,5 +11,6 @@
     <p>詳細：{{ $sport->hs_comment }}</p>
     <p>大学生：{{ $sport->co_sport }}</p>
     <p>詳細：{{ $sport->co_comment }}</p>
+
   @endforeach
 @endsection
