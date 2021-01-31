@@ -15,7 +15,8 @@ class Sport extends Model
         'hs_sport', 
         'hs_comment', 
         'co_sport', 
-        'co_comment'
+        'co_comment',
+        'user_id'
     ];
     
     use HasFactory;

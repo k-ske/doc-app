@@ -1,10 +1,9 @@
-<html>
-<head>
-  <title>USER/INDEX</title>
-</head>
-<body>
-  <h1>INDEX</h1>
-  <p>{{$user->name}}</p> 
-  <p>{{$user->email}}</p>
-</body>
-</html>
+<link rel="stylesheet" href="css/user/index.css">
+
+@extends('layouts.common')
+@section('title', 'トップページ')
+
+<div class="main-wrap">
+  <div class="main-page">
+  </div>
+</div>

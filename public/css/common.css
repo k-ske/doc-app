@@ -8,11 +8,9 @@ body {
   flex-direction: column;
 }
 
-.header {
-}
-.contents {
+
+.main {
   flex: 1;
-  background: lightgreen;
+  background: #DDDDDD;
 }
-.footer {
-}
+
