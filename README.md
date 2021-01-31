@@ -46,7 +46,7 @@
 | injury_site        | string     | null: false                    |
 | when_injured       | string     | null: false                    |
 | MOI                | string     | null: false                    |
-| pain_type_id       | integer    | null: false                    |
+| pain_type          | string     | null: false                    |
 | painful_motion     | string     | null: false                    |
 | how_painful        | string     | null: false                    |
 | comments           | string     | null: false                    |
