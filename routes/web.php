@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Actions\Doctor\AttemptToAuthenticate;
+use App\Http\Controllers\Auth\RegisteredDoctorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +19,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('user/index');
+});
+
+Route::prefix('doctor')->group(function(){
+    Route::get('login', [LoginController::class, 'create'])->name('doctor.login');
+    Route::post('login', [LoginController::class, 'store']);
+
+    Route::get('register', [RegisteredDoctorController::class, 'create'])->name('doctor.register');
+    Route::post('register', [RegisteredDoctorController::class, 'store']);
+
+    Route::middleware('auth:doctor')->group(function(){
+        Route::resource('/doctor', 'App\Http\Controllers\DoctorController');
+    });
 });
 
 Route::get('/logout', function(){
@@ -36,5 +52,6 @@ Route::group(['middleware' => ['auth']], function(){
     Route::resource('/user', 'App\Http\Controllers\UserController', ['only' => ['create', 'show', 'update', 'destroy', 'edit']]);
     Route::resource('/sport', 'App\Http\Controllers\SportController');
     Route::resource('/injury', 'App\Http\Controllers\InjuryController');
+    
 });
 require __DIR__.'/auth.php';
