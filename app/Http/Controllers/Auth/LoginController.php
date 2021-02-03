@@ -12,6 +12,8 @@ use App\Responses\DoctorLoginResponse;
 use Laravel\Fortify\Contracts\LogoutResponse;
 use Laravel\Fortify\Http\Requests\LoginRequest;
 
+use App\Models\Doctor;
+
 class LoginController extends Controller
 {
     /**
