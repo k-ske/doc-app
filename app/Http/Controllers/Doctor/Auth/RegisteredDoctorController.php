@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Doctor\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Models\Doctor;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
@@ -19,7 +19,7 @@ class RegisteredDoctorController extends Controller
      */
     public function create()
     {
-        return view('auth.register');
+        return view('doctor.auth.register');
     }
 
     /**
@@ -38,14 +38,14 @@ class RegisteredDoctorController extends Controller
             'password' => 'required|string|confirmed|min:8',
         ]);
 
-        Auth::login($user = User::create([
+        Auth::login($doctor = Doctor::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]));
 
-        event(new Registered($user));
+        event(new Registered($doctor));
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect('/doctor/doctor');
     }
 }
