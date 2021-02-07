@@ -30,16 +30,13 @@ class RegisteredDoctorController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request, CreatesNewDoctors $creator)
-
+    public function store(Request $request)
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:doctors',
+            'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|confirmed|min:8',
         ]);
-
-        event(new Registered($doctor = $creator->create($request->all())));
 
         Auth::login($doctor = Doctor::create([
             'name' => $request->name,
