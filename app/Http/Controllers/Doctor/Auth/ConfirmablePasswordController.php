@@ -22,7 +22,7 @@ class ConfirmablePasswordController extends Controller
     }
 
     /**
-     * Confirm the user's password.
+     * Confirm the doctor's password.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return mixed
@@ -30,7 +30,7 @@ class ConfirmablePasswordController extends Controller
     public function store(Request $request)
     {
         if (! Auth::guard('web')->validate([
-            'email' => $request->user()->email,
+            'email' => $request->doctor()->email,
             'password' => $request->password,
         ])) {
             throw ValidationException::withMessages([
