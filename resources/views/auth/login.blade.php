@@ -12,7 +12,7 @@
             </div>
         @endif
 
-        <form method="POST" action="{{ isset($guard) ? route('doctor.login') : route('login') }}">
+        <form method="POST" action="{{ route('login') }}">
             @csrf
 
             <div>

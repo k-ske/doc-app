@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\Player as Authenticatable;
 
-class Doctor extends Authenticatable
+class Player extends Authenticatable
 {
     use HasFactory;
 }
