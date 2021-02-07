@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Doctor\Auth;
 
+use App\Models\Doctor;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
@@ -17,7 +18,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function create()
     {
-        return view('auth.login');
+        return view('doctor.auth.login');
     }
 
     /**
