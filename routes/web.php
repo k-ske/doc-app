@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Responses\DoctorLoginResponse;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +39,14 @@ Route::group(['middleware' => ['auth']], function(){
     Route::resource('/injury', 'App\Http\Controllers\InjuryController');
 });
 require __DIR__.'/auth.php';
+
+Route::prefix('doctor')->group(function () {
+    Route::get('login', [App\Http\Controllers\Doctor\Auth\LoginController::class, 'create'])->name('doctor.login');
+    Route::post('login', [App\Http\Controllers\Doctor\Auth\LoginController::class, 'store']);
+    Route::get('register', [App\Http\Controllers\Doctor\Auth\RegisteredDoctorController::class, 'create'])->name('doctor.register');
+    Route::post('register', [App\Http\Controllers\Doctor\Auth\RegisteredDoctorController::class, 'store']);
+
+    Route::group(['middleware' => ['auth:doctor']], function () {
+        Route::resource('/doctor', 'App\Http\Controllers\DoctorController');
+    });
+});
