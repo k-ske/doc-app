@@ -7,16 +7,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\Article;
-use App\Models\Doctor;
 
 class ArticleController extends Controller
 {
     public function index(){
-        $articles = Article::all()
-        ->orderBy('post_at', 'desc')
-        ->paginate(10);
-
-        return view('article.index', ["articles" => $articles]);
+        $articles = Article::get();
+        return view('article.index', ["articles" => 'article']);
     }
 
     public function create(){

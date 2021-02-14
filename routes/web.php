@@ -14,9 +14,7 @@ use App\Responses\DoctorLoginResponse;
 |
 */
 
-Route::get('/', function () {
-    return view('user/index');
-});
+Route::get('/', [App\Http\Controllers\ArticleController::class, 'index'])->name('article.index');
 
 Route::get('/logout', function(){
     Auth::logout();
@@ -53,7 +51,7 @@ Route::group(['prefix'=>'doctor', 'middleware'=>'auth:doctor'], function(){
     Route::get('logout', [App\Http\Controllers\Doctor\Auth\AuthenticatedSessionController::class, 'destroy'])->name('doctor.logout');
     Route::get('article', [App\Http\Controllers\ArticleController::class, 'create'])->name('doctor.article.create');
     Route::post('article', [App\Http\Controllers\ArticleController::class, 'store']);
-    Route::resource('/doctor', 'App\Http\Controllers\DoctorController', ['only' => ['create', 'show', 'update', 'destroy', 'edit']]);
+    Route::resource('/doctor', 'App\Http\Controllers\DoctorController', ['only' => ['create', 'update', 'destroy', 'edit']]);
 });
 
 
