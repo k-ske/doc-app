@@ -8,28 +8,25 @@
     <div class="main-page">
       <div class="injury-file">
         <h3 class="profile">記事一覧</h3>
-       
-        <thead>
-        <tr>
-            <th>作成日時</th>
-            <th>件名</th>
-            <th>メッセージ</th>
-            <th>処理</th>
-        </tr>
-        </thead>
+        <table class="table">
+          <thead>
+          <tr>
+              <th>作成日時</th>
+              <th>件名</th>
+              <th>メッセージ</th>
+              <th></th>
+          </tr>
+          </thead>
+          <tbody id="tbl">
           @foreach ($articles as $article)
+            <tr>
+              <td>{{ $article->created_at->format('Y.m.d') }}</td>
+              <td>{{ $article->title }}</td>
+              <td>{!! nl2br(e(Str::limit($article->content, 10))) !!}</td>
+              <td><a href="{{ action('App\Http\Controllers\ArticleController@show') }}">READ MORE</a></td>
           @endforeach
-               
-                </td>
-                <td class="text-nowrap">
-                    <p><a href="" class="btn btn-primary btn-sm">詳細</a></p>
-                    <p><a href="" class="btn btn-info btn-sm">編集</a></p>
-                    <p><a href="" class="btn btn-danger btn-sm">削除</a></p>
-                </td>
-         
-          
-        
-        
+          </tbody>
+        </table>
       </div>
     </div> 
   </div>
