@@ -35,6 +35,8 @@ Route::group(['middleware' => ['auth']], function(){
     Route::resource('/user', 'App\Http\Controllers\UserController', ['only' => ['create', 'show', 'update', 'destroy', 'edit']]);
     Route::resource('/sport', 'App\Http\Controllers\SportController');
     Route::resource('/injury', 'App\Http\Controllers\InjuryController');
+    Route::get('/article/show', [App\Http\Controllers\ArticleController::class, 'show'])->name('article.show');
+
 });
 
 
