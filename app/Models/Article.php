@@ -10,12 +10,12 @@ class Article extends Model
     protected $fillable = [
         'title',
         'content',
-        'doctor_id',
+        'doctor_id'
     ];
     
     use HasFactory;
 
     public function doctor(){
-        return $this->belongsTo('Doctor::class');
+        return $this->belongsTo('App\Models\Doctor');
     }
 }
