@@ -29,12 +29,15 @@
           @endforeach 
         </div>
         <div class="btn">
-          <div class="btn-create">
-            <a class="btn-create" href="{{ action('App\Http\Controllers\SportController@create') }}">登録ページへ</a>
-          </div>
-          <div class="btn-edit">
-            <a class="btn-edit" href="{{ route('sport.edit', $sport->id)}}">編集する</a>
-          </div>   
+          @if($sports->count() <= 0)
+            <div class="btn-create">
+              <a class="btn-create" href="{{ action('App\Http\Controllers\SportController@create') }}">登録ページへ</a>
+            </div>
+          @else
+            <div class="btn-edit">
+              <a class="btn-edit" href="{{ route('sport.edit', $sport->id)}}">編集する</a>
+            </div> 
+          @endif  
         </div>
       </div>
     </div> 

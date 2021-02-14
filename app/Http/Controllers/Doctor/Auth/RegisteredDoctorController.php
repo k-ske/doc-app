@@ -46,6 +46,6 @@ class RegisteredDoctorController extends Controller
 
         event(new Registered($doctor));
 
-        return redirect('/doctor/doctor');
+        return redirect('doctor/doctor');
     }
 }
