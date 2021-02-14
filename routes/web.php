@@ -38,15 +38,23 @@ Route::group(['middleware' => ['auth']], function(){
     Route::resource('/sport', 'App\Http\Controllers\SportController');
     Route::resource('/injury', 'App\Http\Controllers\InjuryController');
 });
-require __DIR__.'/auth.php';
 
-Route::prefix('doctor')->group(function () {
+
+Route::group(['prefix'=>'doctor'], function(){
     Route::get('login', [App\Http\Controllers\Doctor\Auth\LoginController::class, 'create'])->name('doctor.login');
     Route::post('login', [App\Http\Controllers\Doctor\Auth\LoginController::class, 'store']);
     Route::get('register', [App\Http\Controllers\Doctor\Auth\RegisteredDoctorController::class, 'create'])->name('doctor.register');
     Route::post('register', [App\Http\Controllers\Doctor\Auth\RegisteredDoctorController::class, 'store']);
-
-    Route::group(['middleware' => ['auth:doctor']], function () {
-        Route::resource('/doctor', 'App\Http\Controllers\DoctorController');
-    });
 });
+
+Route::get("/doctor/doctor", [App\Http\Controllers\DoctorController::class, 'index'])->name('doctor.index');
+    
+Route::group(['prefix'=>'doctor', 'middleware'=>'auth:doctor'], function(){
+    Route::get('logout', [App\Http\Controllers\Doctor\Auth\AuthenticatedSessionController::class, 'destroy'])->name('doctor.logout');
+    Route::get('article', [App\Http\Controllers\ArticleController::class, 'create'])->name('doctor.article.create');
+    Route::post('article', [App\Http\Controllers\ArticleController::class, 'store']);
+    Route::resource('/doctor', 'App\Http\Controllers\DoctorController', ['only' => ['create', 'show', 'update', 'destroy', 'edit']]);
+});
+
+
+require __DIR__.'/auth.php';
