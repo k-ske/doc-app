@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\Article;
@@ -11,8 +11,8 @@ use App\Models\Article;
 class ArticleController extends Controller
 {
     public function index(){
-        $articles = Article::get();
-        return view('article.index', ["articles" => 'article']);
+        $articles = Article::all();
+        return view('article.index', compact('articles'));
     }
 
     public function create(){
