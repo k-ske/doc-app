@@ -25,8 +25,12 @@ class ArticleController extends Controller
         $article->content = $request->content;
         $article->doctor_id = $request->user()->id;
         $article->save();
-
         return redirect() -> route('doctor.index');
+    }
+
+    public function show(Request $request, $id){
+        $article = Article::find($id);
+        return view('article.show', compact('article'));
     }
 
     public function edit($id){
