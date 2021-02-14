@@ -9,7 +9,7 @@
       <div class="injury-file">
         <h3 class="profile">既往歴</h3>
         <div class="injury-show">
-          <form action="{{ route('injury.store') }} " method="POST">
+          <form action="{{ route('injury.store') }}" method="POST">
             @csrf
             <div class="subTitle">
               <div class="tag">
