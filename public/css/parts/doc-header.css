@@ -1,0 +1,82 @@
+/**最上段*/
+.allHeader{
+  background-color: white;
+}
+.headList{
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+
+.headerLeft{
+  width: 50%;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+  font-size: 35px;
+}
+
+.title{
+  padding: 10px, 0, 0, 10px;
+}
+
+.title a{
+  text-decoration: none;
+  color: black;
+}
+.headerRight{
+  width: 50%;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
+}
+
+.logOut, .logIn, .signUp{
+  display: inline-block;
+  vertical-align: middle;
+  text-align: right;
+  font-size: 30px;
+}
+
+
+/*サブヘッダー*/
+.subheadArea{
+  background-color: #45baec;
+}
+.menuList{
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+}
+.topMenu-left{
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.topMenu-right{
+  justify-content: flex-end;
+  list-style: none;
+  margin-bottom: 0;
+}
+
+.topMenu a:hover{
+  color: white;
+}
+
+.home, .evaluation, .articlePost, .subhead-myPage, .subhead-logIn, .rightMenu{
+  display: inline-block;
+  position: relative;
+  padding: 0 auto;
+  margin: 0 10px;
+  height: 50px;
+  line-height: 30px;
+  font-size: 25px;
+  font-weight: bold;
+  white-space: nowrap;
+  text-align: center;
+  letter-spacing: 0.05em;
+}

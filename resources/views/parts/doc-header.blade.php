@@ -1,21 +1,21 @@
-<link rel="stylesheet" href="/css/parts/header.css">
+<link rel="stylesheet" href="/css/parts/doc-header.css">
 
 <div class="allHeader">
   <div class="headArea">
     <div class="headList">
       <div class="headerLeft">
-        <div class="title"><a href="/">DOC-APP</a></div>
+        <div class="title"><a href="{{ route('doctor.index') }}">DOC-APP</a></div>
       </div>
-      @auth
+      @if(Auth::guard('doctor')->check())
         <div class="headerRight">
-          <div class="logOut"><a href="{{ route('logout') }}">ログアウト</a></div>  
+          <div class="logOut"><a href="{{ route('doctor.logout') }}">ログアウト</a></div>  
         </div>
       @else
         <div class="headerRight">
-          <div class="logIn"><a href="{{ route('login') }}">ログイン</a></div>
-          <div class="signUp"><a href="{{ route('register') }}">会員登録</a></div>
+          <div class="logIn"><a href="{{ route('doctor.login') }}">ログイン</a></div>
+          <div class="signUp"><a href="{{ route('doctor.register') }}">会員登録</a></div>
         </div> 
-      @endauth
+      @endif
     </div>
   </div>
 
@@ -25,21 +25,21 @@
         <li class="home">
           <a href="/">ホーム</a>
         </li>
-        <li class="articleSearch">
-          <a href="/">記事を検索する</a>
+        <li class="evaluation">
+          <a href="/">オンライン診断</a>
         </li>
-        <li class="hospitalSearch">
-          <a href="/">病院を検索する</a>
+        <li class="articlePost">
+          <a href="{{ route('doctor.article.create') }}">記事を作成する</a>
         </li>
-        @auth
+        @if(Auth::guard('doctor')->check())
         <li class="subhead-myPage">
           <a href="{{ action('App\Http\Controllers\SportController@index') }}">マイページ</a>
         </li>
         @else
         <li class="subhead-logIn">
-          <a href="{{ route('login') }}">ログイン</a>
+          <a href="{{ route('doctor.login') }}">ログイン</a>
         </li>
-        @endauth
+        @endif
       </ul>
       <ul class="topMenu-right">
         <li class="rightMenu">
