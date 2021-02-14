@@ -7,15 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
-    use HasFactory;
-
     protected $fillable = [
         'title',
-        'content', 
-        'doctor_id'
+        'content',
+        'doctor_id',
     ];
+    
+    use HasFactory;
 
     public function doctor(){
-        return $this->belongsTo('App\Models\Doctor');
+        return $this->belongsTo('Doctor::class');
     }
 }
