@@ -1,0 +1,26 @@
+.main-page{
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+  background-color: white;
+}
+
+.top-bar{
+  font-size: 30px;
+  padding: 10px 0 0 10px;  
+}
+
+.table{
+  width: 100%;
+}
+.bar{
+  font-size: 25px;
+  margin: 0 50px;
+  padding: 0 30px 10px 0;
+}
+
+.injury{
+  font-size: 20px;
+  text-align: center;
+}
+/*
