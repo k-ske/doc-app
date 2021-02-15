@@ -4,7 +4,7 @@
   <div class="headArea">
     <div class="headList">
       <div class="headerLeft">
-        <div class="title"><a href="{{ route('doctor.index') }}">DOC-APP</a></div>
+        <div class="title"><a href="/doctor/top">DOC-APP</a></div>
       </div>
       @if(Auth::guard('doctor')->check())
         <div class="headerRight">

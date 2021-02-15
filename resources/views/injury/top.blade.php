@@ -1,4 +1,4 @@
-@extends('layouts.common')
+@extends('layouts.doc-toppage')
 @section('title', 'トップページ')
 
 @section('content')
