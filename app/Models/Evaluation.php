@@ -22,6 +22,6 @@ class Evaluation extends Model
     }
 
     public function injury(){
-        return $this->belongsTo('App\Models\Injury');
+        return $this->belongsTo('App\Models\Injury', 'foreign_key');
     }
 }
