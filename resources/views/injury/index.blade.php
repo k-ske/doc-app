@@ -34,14 +34,19 @@
           @endforeach
         </div>
         <div class="btn">
-          @if($injuries->count() <= 0)
-            <div class="btn-create">
-              <a class="btn-create" href="{{ action('App\Http\Controllers\InjuryController@create') }}">登録ページへ</a>
-            </div>
-          @else
+          @if($injury->evaluations->count() > 0)
+            <div class="btn-evaluation">
+              <a class="btn-evaluation" href="{{ route('injury.evaluation',  $injury->id) }}">診断ページへ</a>
+            </div> 
+          @elseif($injuries->count() > 0)
             <div class="btn-edit">
               <a class="btn-edit" href="{{ route('injury.edit', $injury->id)}}">編集する</a>
             </div> 
+            <p>診断はまだありません</p>
+          @elseif($injuries->count() <= 0)
+            <div class="btn-create">
+              <a class="btn-create" href="{{ action('App\Http\Controllers\InjuryController@create') }}">登録ページへ</a>
+            </div>            
           @endif  
         </div>
       </div>
