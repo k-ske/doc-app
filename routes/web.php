@@ -59,8 +59,10 @@ Route::group(['prefix'=>'doctor', 'middleware'=>'auth:doctor'], function(){
     Route::post('article', [App\Http\Controllers\ArticleController::class, 'store']);
     Route::resource('/doctor', 'App\Http\Controllers\DoctorController', ['only' => ['create', 'update', 'destroy', 'edit']]);
     Route::resource('/injury', 'App\Http\Controllers\InjuryController', ['only' => ['show']]);
-    Route::resource('/evaluation', 'App\Http\Controllers\EvaluationController');
-});
+    Route::get('evaluation', [App\Http\Controllers\EvaluationController::class, 'create'])->name('evaluation.create');
+    Route::post('evaluation', [App\Http\Controllers\EvaluationController::class, 'store']);
+    
+    });
 
 
 require __DIR__.'/auth.php';
