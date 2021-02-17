@@ -36,6 +36,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::resource('/sport', 'App\Http\Controllers\SportController');
     Route::resource('/injury', 'App\Http\Controllers\InjuryController', ['only' => ['index', 'create', 'update', 'destroy', 'edit']]);
     Route::resource('/article', 'App\Http\Controllers\ArticleController', ['only' => ['show']]);
+    Route::resource('/evaluation', 'App\Http\Controllers\EvaluationController', ['only' => ['show']]);
 
 });
 
@@ -58,6 +59,7 @@ Route::group(['prefix'=>'doctor', 'middleware'=>'auth:doctor'], function(){
     Route::post('article', [App\Http\Controllers\ArticleController::class, 'store']);
     Route::resource('/doctor', 'App\Http\Controllers\DoctorController', ['only' => ['create', 'update', 'destroy', 'edit']]);
     Route::resource('/injury', 'App\Http\Controllers\InjuryController', ['only' => ['show']]);
+    Route::resource('/evaluation', 'App\Http\Controllers\EvaluationController');
 });
 
 
