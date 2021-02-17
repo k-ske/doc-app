@@ -1,0 +1,52 @@
+.main-page{
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+  background-color: white;
+}
+
+.evaluation-file{
+  background-color: #DDDDDD;
+}
+
+.top-bar{
+  font-size: 25px;
+  padding: 10px 0 0 10px;  
+  margin: 30px 0 0 0;
+}
+
+.injury-top{
+  display: flex;  
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  padding: 0 0;
+}
+
+.injury-title{
+  font-size: 22px;
+}
+.tag{
+  width: auto;
+  text-align: left;
+  font-size: 18px;
+  vertical-align: middle;
+  padding-left: 30px;
+}
+
+.eval-top{
+  display: flex;  
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.eval{
+  width: auto;
+  text-align: left;
+  font-size: 20px;
+  vertical-align: middle;
+  padding-left: 30px;
+}

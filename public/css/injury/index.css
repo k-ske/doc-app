@@ -23,7 +23,7 @@
   padding-left: 30px;
 }
 
-.btn-create, .btn-edit{
+.btn-evaluation, .btn-create, .btn-edit{
   border-radius: 2px;
   box-sizing: border-box;
   display: block;
