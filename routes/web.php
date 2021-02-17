@@ -37,7 +37,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::resource('/injury', 'App\Http\Controllers\InjuryController', ['only' => ['index', 'create', 'update', 'destroy', 'edit']]);
     Route::resource('/article', 'App\Http\Controllers\ArticleController', ['only' => ['show']]);
     Route::resource('/evaluation', 'App\Http\Controllers\EvaluationController', ['only' => ['show']]);
-
+    Route::get('/injury/evaluation/{injury}', [App\Http\Controllers\InjuryController::class, 'evaluation'])->name('injury.evaluation');
 });
 
 
@@ -48,7 +48,7 @@ Route::group(['prefix'=>'doctor'], function(){
     Route::post('register', [App\Http\Controllers\Doctor\Auth\RegisteredDoctorController::class, 'store']);
 });
 
-Route::get("/doctor/top", function(){
+Route::get('/doctor/top', function(){
     $injuries = \App\Models\Injury::orderBy('created_at', 'desc')->get();
     return view ('injury.top',compact('injuries'));
 });
@@ -61,7 +61,6 @@ Route::group(['prefix'=>'doctor', 'middleware'=>'auth:doctor'], function(){
     Route::resource('/injury', 'App\Http\Controllers\InjuryController', ['only' => ['show']]);
     Route::get('evaluation', [App\Http\Controllers\EvaluationController::class, 'create'])->name('evaluation.create');
     Route::post('evaluation', [App\Http\Controllers\EvaluationController::class, 'store']);
-    
     });
 
 
