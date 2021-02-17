@@ -32,7 +32,14 @@
           </div>
           <div class="content">
             <p>詳細：{{$injury->comments}}</p>    
-          </div>            
+          </div>           
+          
+          @if(Auth::guard('doctor')->check())
+          <div class="evaluation">
+            <a href="{{ route('evaluation.create', ['injury_id' => $injury->id]) }}">オンライン診断</a>
+          </div>
+          
+          @endif
       </div>
     </div> 
   </div>
