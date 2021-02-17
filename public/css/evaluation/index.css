@@ -1,0 +1,66 @@
+.main-page{
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+  background-color: white;
+}
+
+.top-bar{
+  font-size: 30px;
+  padding: 10px 0 0 10px;  
+}
+
+.table{
+  width: 100%;
+}
+.bar{
+  font-size: 25px;
+  margin: 0 50px;
+  padding: 0 30px 10px 0;
+}
+
+.article{
+  font-size: 20px;
+  text-align: center;
+}
+/*
+.main-page{
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+  background-color: white;
+}
+
+.injury-file{
+  background-color: #DDDDDD;
+}
+
+.profile{
+  font-size: 20px;
+  padding: 10px 0 0 10px;  
+}
+
+
+.tag{
+  width: auto;
+  text-align: left;
+  font-size: 20px;
+  vertical-align: middle;
+  padding-left: 30px;
+}
+
+.btn-create, .btn-edit{
+  border-radius: 2px;
+  box-sizing: border-box;
+  display: block;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: .1em;
+  line-height: 1.2;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 640px;
+  padding: 10px 5px; 
+}
+/*
