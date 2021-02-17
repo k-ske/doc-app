@@ -22,6 +22,11 @@ class InjuryController extends Controller
         return view('injury.index', ["injuries" => $injuries]);
     }
 
+    public function evaluation(Request $request, $id){
+        $injury = Injury::find($id);
+        return view('injury.evaluation', compact('injury'));
+    }
+
     public function create(){
         return view('injury.create');
     }
