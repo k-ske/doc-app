@@ -33,7 +33,7 @@
         </li>
         @if(Auth::guard('doctor')->check())
         <li class="subhead-myPage">
-          <a href="{{ action('App\Http\Controllers\SportController@index') }}">マイページ</a>
+          <a href="{{ action('App\Http\Controllers\DoctorController@index') }}">マイページ</a>
         </li>
         @else
         <li class="subhead-logIn">

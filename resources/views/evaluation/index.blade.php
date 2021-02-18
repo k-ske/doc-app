@@ -1,4 +1,4 @@
-@extends('layouts.common')
+@extends('layouts.doc-mypage')
 @section('title', 'トップページ')
 
 @section('content')
@@ -7,7 +7,7 @@
   <div class="main-wrap">
     <div class="main-page">
       <div class="article-list">
-        <h3 class="top-bar">記事一覧</h3>
+        <h3 class="top-bar">オンライン診断一覧</h3>
         <table class="table">
           <thead>
           <tr>
@@ -18,13 +18,12 @@
           </tr>
           </thead>
           <tbody id="tbl">
-          @foreach ($articles as $article)
+          @foreach ($evaluations as $evaluation)
             <tr>
-              <td class="article">{{ $article->created_at->format('Y.m.d') }}</td>
-              <td class="article">{{ $article->title }}</td>
-              <td class="article">{!! nl2br(e(Str::limit($article->content, 10))) !!}</td>
-              <td class="article"><a href="{{ route('article.show', $article->id) }}">READ MORE</a></td>
-          @endforeach
+              <td class="article">{{ $evaluation->created_at->format('Y.m.d') }}</td>
+              <td class="article">{{ $evaluation->injury_name }}</td>
+              <td class="article">{!! nl2br(e(Str::limit($evaluation->comments, 10))) !!}</td>
+              @endforeach
           </tbody>
         </table>
       </div>
