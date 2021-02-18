@@ -14,6 +14,12 @@ use App\Models\Doctor;
 
 class EvaluationController extends Controller
 {
+    public function index(){
+        $doctor_id = Auth::id();
+        $evaluations = Evaluation::where('doctor_id', $doctor_id)->get();
+        return view('evaluation.index', ["evaluations" => $evaluations]);
+    }
+
     public function create(){
         $q = \Request::query();
         return view('evaluation.create', [
@@ -24,9 +30,7 @@ class EvaluationController extends Controller
     public function store(EvaluationRequest $request){
         $evaluation = new Evaluation;
         $input = $request->only($evaluation->getFillable());
-        $evaluation = $evaluation->create($input);
-
-        
+        $evaluation = $evaluation->create($input);  
         return redirect('/doctor/top');
     }
 }
