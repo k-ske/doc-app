@@ -23,4 +23,8 @@ class Injury extends Model
     public function user(){
         return $this->belongsTo('App\Models\User');
     }
+
+    public function evaluations(){
+        return $this->hasMany('App\Models\Evaluation');
+    }
 }

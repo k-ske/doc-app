@@ -1,0 +1,29 @@
+.main-page{
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+  background-color: white;
+}
+
+.top-bar{
+  font-size: 30px;
+  padding: 10px 0 0 10px;  
+}
+
+.injury-top{
+  display: flex;  
+  justify-content: space-between;
+  align-items: center;
+}
+
+.injury-title{
+  font-size: 25px;
+}
+
+.date{
+  font-size: 15px; 
+}
+
+.content{
+  font-size: 20px;
+}

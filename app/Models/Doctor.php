@@ -62,4 +62,8 @@ class Doctor extends Authenticatable
     public function articles(){
         return $this->hasMany('Article::class');
     }
+
+    public function evaluations(){
+        return $this->hasMany('Evaluation::class');
+    }
 }

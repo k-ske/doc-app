@@ -4,7 +4,7 @@
   <div class="headArea">
     <div class="headList">
       <div class="headerLeft">
-        <div class="title"><a href="{{ route('doctor.index') }}">DOC-APP</a></div>
+        <div class="title"><a href="/doctor/top">DOC-APP</a></div>
       </div>
       @if(Auth::guard('doctor')->check())
         <div class="headerRight">
@@ -33,7 +33,7 @@
         </li>
         @if(Auth::guard('doctor')->check())
         <li class="subhead-myPage">
-          <a href="{{ action('App\Http\Controllers\SportController@index') }}">マイページ</a>
+          <a href="{{ action('App\Http\Controllers\DoctorController@index') }}">マイページ</a>
         </li>
         @else
         <li class="subhead-logIn">

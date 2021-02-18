@@ -6,22 +6,24 @@
   
   <div class="main-wrap">
     <div class="main-page">
-      <h3 class="profile">記事作成ページ</h3>
-      <div class="article-make">
-        <form action="{{ route('doctor.article.create') }}" method="POST">
-          @csrf
-          <div class="article-main">
-            <div class="title">
-              <input name="title" placeholder="タイトル" value="{{ old('title') }}">
+      <div class="article-file">
+        <h3 class="profile">記事作成ページ</h3>
+        <div class="article-make">
+          <form action="{{ route('doctor.article.create') }}" method="POST">
+            @csrf
+            <div class="article-main">
+              <div class="tag">
+                <input name="title" placeholder="タイトル" value="{{ old('title') }}">
+              </div>
+              <div class="content">
+                <textarea class="content" name="content" cols="50" rows="10" value="{{ old('content') }}"></textarea>
+              </div>
+              <div class="btn-wrap">
+                <input class="btn" type="submit" value="投稿する">
+              </div>
             </div>
-            <div class="content-wrap">
-              <textarea name="content" cols="50" rows="10" value="{{ old('content') }}"></textarea>
-            </div>
-            <div class="btn-wrap">
-              <input class="btn" type="submit" value="投稿する">
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   </div>
