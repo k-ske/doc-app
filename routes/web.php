@@ -57,11 +57,12 @@ Route::group(['prefix'=>'doctor', 'middleware'=>'auth:doctor'], function(){
     Route::get('logout', [App\Http\Controllers\Doctor\Auth\AuthenticatedSessionController::class, 'destroy'])->name('doctor.logout');
     Route::get('article', [App\Http\Controllers\ArticleController::class, 'create'])->name('doctor.article.create');
     Route::post('article', [App\Http\Controllers\ArticleController::class, 'store']);
-    Route::resource('/doctor', 'App\Http\Controllers\DoctorController', ['only' => ['create', 'update', 'destroy', 'edit']]);
+    Route::resource('/doctor', 'App\Http\Controllers\DoctorController', ['only' => ['index','create', 'update', 'destroy', 'edit']]);
     Route::resource('/injury', 'App\Http\Controllers\InjuryController', ['only' => ['show']]);
-    Route::get('evaluation', [App\Http\Controllers\EvaluationController::class, 'create'])->name('evaluation.create');
-    Route::post('evaluation', [App\Http\Controllers\EvaluationController::class, 'store']);
-    });
+    Route::resource('/evaluation', 'App\Http\Controllers\EvaluationController',  ['only' => ['index','update', 'destroy', 'edit']]);
+    Route::get('evaluation/create', [App\Http\Controllers\EvaluationController::class, 'create'])->name('evaluation.create');
+    Route::post('evaluation/create', [App\Http\Controllers\EvaluationController::class, 'store']);
+});
 
 
 require __DIR__.'/auth.php';
